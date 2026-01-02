@@ -1,9 +1,9 @@
 Copyright (c) 2026 by Dominique Beneteau (dombeneteau@yahoo.com)
 
-This SQL Server package allows you to run asynchronously a request. It is articulated around:
-- A table that contains the requests to run (stored procs, commands, etc),
+This SQL Server package allows you to run a request asynchronously. It is articulated around:
+- A (queue) table that contains the requests to run (stored procs, commands, etc),
 - An API (stored procedure) that allows you to insert into this table a request to run later,
-- A SQL Agent job that polls this table every 30 seconds and process one request at a time.
+- A SQL Agent job that polls this table every 30 seconds and processes one request at a time.
 
 This is particularly useful when you want to run a multi-step process (e.g. ETL) and part of it you want to execute non-urgent sequences... without having to wait these are completed.
 
